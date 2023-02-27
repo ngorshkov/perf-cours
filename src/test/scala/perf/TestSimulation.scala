@@ -14,6 +14,12 @@ class TestSimulation extends Simulation {
     .disableFollowRedirect
 
   setUp(
-    CommonScenario().inject(rampUsersPerSec(1) to 10 during (1200))
-  ).protocols(httpProtocol)
+    CommonScenario().inject(
+      incrementUsersPerSec((100/10).toInt)
+        .times(10)
+        .eachLevelLasting(80)
+        .separatedByRampsLasting(40)
+        .startingFrom(1)
+    )
+  ).protocols(httpProtocol).maxDuration(1200)
 }

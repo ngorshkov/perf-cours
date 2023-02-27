@@ -68,7 +68,7 @@ object Actions {
     .formParam("advanceDiscount", "0")
     .formParam("depart", "${departureCity}")
     .formParam("departDate", "02/05/2023")
-    .formParam("arrive", "${arrivialCity}")
+    .formParam("arrive", "${arravialCity}")
     .formParam("returnDate", "02/15/2023")
     .formParam("numPassengers", "1")
     .formParam("seatPref", "None")
